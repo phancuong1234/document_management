@@ -31,12 +31,22 @@
                                         <td>{{ $key->name }}</td>
                                         <td>{{ ($key->gender == 1)? "Nam":"Nữ" }}</td>
                                         <td><img src="{{ $key->avatar }}"></td>
-                                        <td><span class="status-p bg-primary">Truong Phong</span></td>
-                                        <td><span class="status-p bg-primary">Khoa DTQT</span></td>
+
+
+                                        <td>
+                                            {!! Form::open(['method'=>'POST', 'route'=>['users.ajaxps',$key->id], 'id' => 'form-pos'.$key->id]) !!}
+                                                {!! Form::select('positions', $position, null, ['class' => 'form-control', 'onchange' => 'pos('.$key->id.')']) !!}
+                                            {!! Form::close() !!}
+                                        </td>
+                                        <td>
+                                            {!! Form::open(['method'=>'POST', 'route'=>['users.ajaxdp',$key->id], 'id' => 'form-dep'.$key->id]) !!}
+                                                {!! Form::select('depart', $department, null, ['class' => 'form-control', 'onchange' => 'dep('.$key->id.')']) !!}
+                                            {!! Form::close() !!}
+                                        </td>
                                         <td>
                                             <ul class="d-flex justify-content-center">
-                                                <li class="mr-3"><a href="{{ route('users.show',$key->id) }}" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                <li><a href="javascript:void(0)" class="text-danger"  data-confirm="Ban Co Muon Xoa Ko?"><i class="ti-trash"></i></a>
+                                                <li class="mr-3" style="margin-top: 10px;"><a href="{{ route('users.show',$key->id) }}" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                <li style="margin-top: 10px;"><a href="javascript:void(0)" class="text-danger"  data-confirm="Ban Co Muon Xoa Ko?"><i class="ti-trash"></i></a>
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy',$key->id], 'id' => 'delete-form']) !!}
                                                     {!! Form::close() !!}
                                                 </li>

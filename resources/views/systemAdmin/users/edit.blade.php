@@ -32,7 +32,7 @@
                                 {!! Form::label('birth_date', "Ngày Sinh") !!}
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        {{ Form::date('birth_date', \Carbon\Carbon::now(), array('class' => 'form-control')) }}
+                                        {{ Form::date('birth_date', \Carbon\Carbon::now(), ['class' => 'form-control', 'min' => \Carbon\Carbon::now()->format('Y-m-d')]) }}
                                     </div>
                                 </div>
                                 {!! Form::label('gender', "Giới Tính") !!}
@@ -52,6 +52,12 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         {!! Form::text('phone', $user->phone, ['class' => 'form-control', 'placeholder' => "Nhập số điện thoại", 'id' => 'phone']) !!}
+                                    </div>
+                                </div>
+                                {!! Form::label('birth_date', "Ngày Het Han Tai Khoan") !!}
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        {{ Form::date('end_date', \Carbon\Carbon::now(), ['class' => 'form-control', 'min' => \Carbon\Carbon::now()->format('Y-m-d')]) }}
                                     </div>
                                 </div>
                                 {!! Form::submit("gui", ['class' => 'btn btn-primary mt-4 pr-4 pl-4']) !!}

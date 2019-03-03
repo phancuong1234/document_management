@@ -12,7 +12,8 @@
                     <li class="active">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-sitemap"></i><span>Quản lý</span></a>
                         <ul class="collapse">
-                        <li><a href="{{ route('department.index') }}">Phòng ban</a></li>
+                            <li><a href="{{ route('department.index') }}">Phòng ban</a></li>
+                            <li><a href="{{ route('department.index') }}">Quan Li Thanh vien</a></li>
                         </ul>
                     </li>
                 </ul>

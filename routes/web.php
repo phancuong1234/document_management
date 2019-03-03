@@ -19,4 +19,12 @@ Route::namespace('Index')->group(function(){
 Route::namespace('SystemAdmin')->group(function(){
     Route::resource('department', 'Department');
     Route::resource('users', 'ManageUser');
+    Route::post('/ajaxdp/{id}',[
+        'as' => 'users.ajaxdp',
+        'uses' => 'ManageUser@ajaxdp'
+    ]);
+    Route::post('/ajaxps/{id}',[
+        'as' => 'users.ajaxps',
+        'uses' => 'ManageUser@ajaxps'
+    ]);
 });

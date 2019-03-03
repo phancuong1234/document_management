@@ -60,6 +60,7 @@
 <script src="/layouts/systemAdmin/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="/layouts/systemAdmin/js/popper.min.js"></script>
 <script src="/layouts/systemAdmin/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="/layouts/systemAdmin/js/owl.carousel.min.js"></script>
 <script src="/layouts/systemAdmin/js/metisMenu.min.js"></script>
 <script src="/layouts/systemAdmin/js/jquery.slimscroll.min.js"></script>
