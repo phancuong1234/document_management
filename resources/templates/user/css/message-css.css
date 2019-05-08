@@ -1,0 +1,220 @@
+.container{
+    max-width:100%;
+}
+img{
+    max-width:100%;
+}
+.inbox_people {
+    background: #f8f8f8 none repeat scroll 0 0;
+    float: left;
+    overflow: hidden;
+    width: 30%; border-right:1px solid #c4c4c4;
+}
+.inbox_msg {
+    border: 1px solid #c4c4c4;
+    clear: both;
+    overflow: hidden;
+}
+.top_spac{ margin: 20px 0 0;}
+
+
+.recent_heading {float: left; width:40%;}
+.headind_srch{  overflow:hidden; border-bottom:1px solid #c4c4c4;}
+
+.recent_heading h4 {
+    color: #05728f;
+    font-size: 21px;
+    margin: auto;
+}
+
+.chat_ib h5 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #464646;
+    text-align: left;
+    margin-left: 5%;
+}
+.chat_ib h5 span {
+    font-size:13px;
+    float:right;
+}
+.chat_ib_p {
+    font-size:14px;
+    color:#989898;
+    margin-left: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 0.8 !important;
+}
+.chat_img {
+    float: left;
+    width: 15%;
+}
+.chat_ib {
+    float: left;
+    width: 79%;
+    margin-left: 5%;
+    height: 50px;
+    text-align: left;
+}
+
+.chat_people{
+    overflow:hidden;
+    clear:both;
+}
+.chat_list {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 5px 5px 5px 5px;
+}
+.inbox_chat {
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.active_chat{
+    background:#ebebeb;
+}
+
+.incoming_msg_img {
+    display: inline-block;
+    width: 6%;
+}
+.received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+}
+.received_withd_msg p {
+    background: #ebebeb none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    max-width: 90%;
+    display: inline-block;
+    float: left;
+}
+.time_date {
+    color: #747474;
+    font-size: 12px;
+    float: left;
+    margin: 1% 1%;
+}
+.time_date2 {
+    color: #747474;
+    font-size: 12px;
+    margin: 1% 1%;
+    float: right;
+}
+.received_withd_msg {
+    width: 100%;
+}
+.mesgs {
+    float: left;
+    padding: 30px 15px 0 25px;
+    width: 70%;
+}
+
+.sent_msg p {
+    background: #05728f none repeat scroll 0 0;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 0; color:#fff;
+    padding: 5px 10px 5px 12px;
+    max-width:90%;
+    display: inline-block;
+    float: right;
+}
+.outgoing_msg{
+    overflow:hidden;
+    margin:26px 0 26px;
+}
+.sent_msg {
+    float: right;
+   width: 100%;
+}
+.input_msg_write input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #4c4c4c;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+}
+
+.type_msg {border-top: 1px solid #c4c4c4;position: relative;}
+.msg_send_btn {
+    background: #05728f none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 33px;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 33px;
+}
+.messaging { padding: 0 0 50px 0;}
+.msg_history {
+    height: 516px;
+    overflow-y: auto;
+}
+.search-message1 {
+    padding: 10px 10px;
+}
+.search-message1 label {
+    border: 1px solid #bdc7d8;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.search-message1-input{
+    background-color: #f5f6f7;
+    border-radius: 5px;
+    border-style: none;
+    box-sizing: border-box;
+    font-family: Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 28px;
+    width: 100%;
+}
+.container-chat {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.name-chat {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: initial;
+}
+.content-chat {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: inherit;
+    color: rgba(153, 153, 153, 1);
+}
+.chat_date {
+    float: right;
+    font-size: 14px;
+    color: rgba(153, 153, 153, 1);
+    font-family: initial;
+}

@@ -148,6 +148,7 @@ Route::group(['middleware' => 'checkIsNotSysAdmin'], function () {
         'as' => 'profile',
         'uses' => 'Information@index'
     ]);
+    Route::resource('collaboration', 'CollaborationController');
 
     Route::group(['middleware' => 'checkDelegacy'], function () {
         // Phần chỉ dành cho Department admin, không dành cho ủy quyền
