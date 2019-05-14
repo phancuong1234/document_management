@@ -28,7 +28,7 @@
                 <div>
                     <div class="upload__files">
                         @foreach($getAttachedFile as $key => $attachedFile)
-                            <a href="/upload/files/message/{{$attachedFile->name}}" download class="preview"><span class="preview__name" title="{{$attachedFile->name}}">{{$attachedFile->name}}</span></a>
+                            <a href="/upload/files/message/{{$attachedFile->name}}" download class="preview"><span class="preview__name" style="font-size: 13px;" title="{{$attachedFile->name}}">{{$attachedFile->name}}</span></a>
                         @endforeach
                     </div>
                 </div>

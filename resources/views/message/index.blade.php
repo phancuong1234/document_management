@@ -13,11 +13,11 @@ Tin nhắn đến
             <div class="list-group-item" onclick="showMessages('{{$message->id}}')" style="padding: 10px 10px 0px 15px;">
                 <img src="/templates/img/user/{{$message->avatar}}" style="width: 50px;float: left;">
                 <div style="float: left;margin-left:20px ">
-                    <span class ="name userchinh1" style="margin:0 20px"><a href="" style="color:#f7f7f7;">{{$message->name}}</a></span><br/>
+                    <span class ="name userchinh1" style="margin:0 20px;width: 100%;"><a href="" style="color:#f7f7f7;">{{$message->name}}</a></span><br/>
                     <a href=""><span style="color: black;line-height: 35px;">{{$message->title}}</span></a>
                 </div>
                 <div>
-                    <span class="badge">{{ date('H:m:i ( d-m-Y )', strtotime($message->created_at)) }}</span><br>
+                    <span class="badge" title="{{ date('H:m:i ( d-m-Y )', strtotime($message->created_at)) }}">{{Carbon\Carbon::createFromTimeStamp(strtotime($message->created_at))->diffForHumans()}}</span><br>
                 </div>
             </div>
             @endforeach

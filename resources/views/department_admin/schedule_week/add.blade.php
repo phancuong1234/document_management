@@ -27,10 +27,10 @@
                                 </div>
                                 {!! Form::label('start', 'Ngày bắt đầu') !!}
                                 <div class="form-group">
-                                    {!! Form::date('start', \Carbon\Carbon::now(), [
+                                    {!! Form::date('start', date('Y-m-d', strtotime('last monday', strtotime('next monday'))), [
                                     'class' => 'form-control',
                                     'max' => \Carbon\Carbon::now()->addYear(100)->format('Y-m-d'),
-                                    'min' => \Carbon\Carbon::now()->format('Y-m-d'),
+                                    'min' => date('Y-m-d', strtotime('last monday', strtotime('next monday'))),
                                     'required']) !!}
                                 </div>
                                 <div class="form-group">
