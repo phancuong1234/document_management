@@ -178,7 +178,7 @@
                                                     @if($value->id != auth()->user()->id)
                                                         <div class="message-user-seen">
                                                             <span>
-                                                                <a href="">
+                                                                <a href="{{ route('reply-message-user', $value->id) }}">
                                                                     <i class="fab fa-facebook-messenger" style="font-size: 14px;margin-right: 2px"></i>
                                                                     Nhắn tin
                                                                 </a>

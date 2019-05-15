@@ -25,7 +25,6 @@ $(function () {
     $("#publish_day").datepicker({
         autoclose: true,
         todayHighlight: true,
-        startDate: '+0d'
     }).datepicker('update', new Date());
     $("#datepicker").datepicker({
         autoclose: true,

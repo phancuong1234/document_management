@@ -131,6 +131,10 @@ Route::group(['middleware' => 'checkIsNotSysAdmin'], function () {
     ]);
     // tin nhắn cho cả 2 role
     Route::resource('message', 'MessageController');
+    Route::get('/message/create/{id}', [
+        'as' => 'reply-message-user',
+        'uses' => 'MessageController@createHaveUsers'
+    ]);
     Route::post('/reply-message/{id}', [
         'as' => 'reply-message',
         'uses' => 'MessageController@reply'

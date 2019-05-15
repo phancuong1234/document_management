@@ -30,6 +30,13 @@ class MessageController extends Controller
             ->where('messages.receiver_id', Auth::user()->id)->get();
         return view('message.index', compact('getMessages'));
     }
+
+    public function createHaveUsers($id)
+    {
+        $users = User::where('id', $id)->pluck('name', 'id');
+        return view('message.create2', compact('users'));
+    }
+
     public function create()
     {
         $users = User::where([['id', '!=', Auth::user()->id], ['role', '!=', 1]])->pluck('name', 'id');
