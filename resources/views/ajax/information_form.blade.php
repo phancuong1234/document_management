@@ -1,13 +1,19 @@
 @php
-    $id = \App\Models\DepartmentUser::where('user_id', Auth::user()->id)->first();
-    $department = \App\Models\Department::where('id', $id->department_id)->first();
-    $position = \App\Models\Position::where('id', $id->position_id)->first();
+    if(auth()->user()->role != config('setting.roles.system_admin')){
+        $id = \App\Models\DepartmentUser::where('user_id', Auth::user()->id)->first();
+        $department = \App\Models\Department::where('id', $id->department_id)->first();
+        $position = \App\Models\Position::where('id', $id->position_id)->first();
+    }
 @endphp
 {!! Form::open(['method'=>'POST', 'route'=>['update.information']]) !!}
 <h4>
     {!! Form::text('name',  Auth::user()->name, ['class' => 'form-control', 'placeholder' => "Nhập Tên Thành Viên", 'id' => 'name', 'required' => 'required', 'pattern' => config('setting.patter_fullname'),  'title' => 'Họ tên chỉ bao gồm chữ cái và phải tối thiểu 6 kí tự']) !!}
 </h4>
-<span> {{ $position->name }} - {{ $department->name }}</span>
+@if(auth()->user()->role != config('setting.roles.system_admin'))
+    <span> {{ $position->name }} - {{ $department->name }}</span>
+@else
+    <span> Admin Hệ Thống</span>
+@endif
 <br/>
 <br/>
 <p>

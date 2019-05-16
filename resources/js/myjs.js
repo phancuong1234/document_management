@@ -194,7 +194,7 @@ $(document).on("click", "#editInfor", function(){
             $('#ajaxform').html(data);
         },
         error: function (){
-            alert("that bai");
+            alert("Xảy ra lỗi, truy cập thất bại");
         }
     });
     return false;
