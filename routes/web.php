@@ -140,6 +140,10 @@ Route::group(['middleware' => 'checkIsNotSysAdmin'], function () {
         'uses' => 'MessageController@reply'
     ]);
 
+    Route::get('/del-multi-message/', [
+        'as' => 'detele.message',
+        'uses' => 'MessageController@deleteMulti'
+    ]);
     Route::get('/information', [
         'as' => 'profile',
         'uses' => 'Information@index'

@@ -30,7 +30,7 @@
                                     {!! Form::date('start', $schedule->start, [
                                     'class' => 'form-control',
                                     'max' => \Carbon\Carbon::now()->addYear(100)->format('Y-m-d'),
-                                    'min' => \Carbon\Carbon::now()->format('Y-m-d'),
+                                    'min' => date('Y-m-d', strtotime('last monday', strtotime('next monday'))),
                                     'required']) !!}
                                 </div>
                                 <div class="form-group schedule">

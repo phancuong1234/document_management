@@ -37,7 +37,7 @@ Chỉnh sửa văn bản đến cá nhân
                     {!! Form::file("attachedFiles[]", ["class"=>"form-control-file", "multiple", "id"=>"attachedFiles", "style"=>"width: 50%;margin-left: 33%"]) !!}
                 </div>
                 <div class="form-group row">
-                    {!! Form::submit("Gửi", ["class"=>"btn btn-primary", 'style' => 'width: 15%;']) !!}
+                    {!! Form::submit("Sửa", ["class"=>"btn btn-primary", 'style' => 'width: 15%;']) !!}
                 </div>
             {!! Form::close() !!}
         </div>

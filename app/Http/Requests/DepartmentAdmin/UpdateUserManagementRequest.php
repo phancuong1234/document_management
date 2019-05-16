@@ -24,7 +24,6 @@ class UpdateUserManagementRequest extends FormRequest
     public function rules()
     {
         return [
-            'password' => 'required',
             'name' => 'required',
             'address' => 'required',
             'phone' => 'required|numeric',

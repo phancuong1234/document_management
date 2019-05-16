@@ -15,5 +15,7 @@ class Message extends Model
         'receiver_id',
         'title',
         'content',
+        'parent_id',
+        'is_seen',
     ];
 }

@@ -59,5 +59,10 @@ return [
         'is_approved' => 1,
         'no_approved' => 0,
         'cancel_approved' => 2,
-    ]
+    ],
+    'seen' => [
+        'is_seen' => 1,
+        'not_seen' => 0,
+    ],
+    'parent_id_of_message' => 0,
 ];

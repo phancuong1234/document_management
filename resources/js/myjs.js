@@ -30,7 +30,15 @@ function cancelApproval(id, type) {
         document.getElementById(id).submit();
     }
 }
-
+function del(id) {
+    var checkBox = document.getElementById("delete-"+id);
+    var del = document.getElementById("del-multi");
+    if (checkBox.checked == true){
+        del.style.display = "block";
+    } else {
+        del.style.display = "none";
+    }
+}
 function changeDepartment(id) {
     const flag = confirm("Bạn có muốn thay đổi phòng ban của id: " + id + " này không ?");
     if (flag === true) {
@@ -276,6 +284,17 @@ $(document).on('click', '#btnInfrastructure', function () {
         {
             sizef.setCustomValidity("");
         }
+    }
+});
+
+$(document).on('click', '#master', function () {
+    $('input:checkbox').not(this).prop('checked', this.checked);
+    var checkBox = document.getElementById("master");
+    var del = document.getElementById("del-multi");
+    if (checkBox.checked == true){
+        del.style.display = "block";
+    } else {
+        del.style.display = "none";
     }
 });
 
