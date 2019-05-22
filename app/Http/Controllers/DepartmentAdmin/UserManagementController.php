@@ -173,7 +173,6 @@ class UserManagementController extends Controller
     public function update(UpdateUserManagementRequest $request, $id)
     {
         $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
         $date = Carbon::createFromFormat('d/m/Y', $input['birth_date']);
         $input['birth_date'] = Carbon::parse($date)->format('Y/m/d');
         if($request->no_end_date == 1){
@@ -183,7 +182,7 @@ class UserManagementController extends Controller
         try
         {
             if(!isset($input['avatar'])){
-                User::find($id)->update(['password' => $input['password'], 'name' => $input['name'], 'birth_date' => $input['birth_date'], 'gender' => $input['gender'], 'address' => $input['address'], 'phone' => $input['phone']]);
+                User::find($id)->update(['name' => $input['name'], 'birth_date' => $input['birth_date'], 'gender' => $input['gender'], 'address' => $input['address'], 'phone' => $input['phone']]);
                 DepartmentUser::where('user_id', $id)->update(['start_date' => Carbon::now(),'end_date' => $input['end_date']]);
             }
             else {

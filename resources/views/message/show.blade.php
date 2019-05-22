@@ -32,6 +32,56 @@
                         @endforeach
                     </div>
                 </div>
+                    <div>
+                        @foreach($getReplyMessages as $value)
+                            <div class="reply_message_right {{ ($value->sender_id == auth()->user()->id)?"reply-message":"" }} ">
+                                <div class="detail-head">
+                                    <div style="padding-top: 10px;">
+                                        @if($value->avatar == 'user-default.png')
+                                            <img src="/templates/user/images/{{$value->avatar}}" style="width: 35px;height: 35px;border-radius: 2em;">&nbsp;
+                                        @else
+                                            <img src="/upload/images/{{$value->avatar}}" style="width: 35px;height: 35px;border-radius: 2em;">&nbsp;
+                                        @endif
+                                        <span style="color: black;font-weight: bold">{{ $value->name }}</span>
+                                        <div style="float: right"><span title="{{ date('H:m:i ( d-m-Y )', strtotime($value->created_at)) }}">
+                                                {{Carbon\Carbon::createFromTimeStamp(strtotime($value->created_at))->diffForHumans()}}</span>&nbsp;
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 style="padding-left: 10px;color: red;">Tiêu Đề: {{ $value->title }}</h4>
+                                    </div>
+                                    <div class="content-document">
+                                        <p style="padding-left: 10px">{{ $value->content }}</p>
+                                    </div>
+                                    <br>
+                                    <div class="line" style="max-width: 98%;margin: 0 auto;"></div>
+                                    <div>
+                                        <div style="margin: 5px 10px;">
+                                            @php
+                                                $getAttachedFileReply = \App\Models\MessageAttachments::where('messages_id', $value->id)->get();
+                                            @endphp
+                                            @if(isset($getAttachedFileReply))
+                                                @foreach($getAttachedFileReply as $value)
+                                                    @php
+                                                        $path = pathinfo($value->name,PATHINFO_EXTENSION);
+                                                    @endphp
+                                                    <div class="preview1">
+                                                        <a href="/upload/files/document_reply/{{ $value->name }}" download style="color:black;">
+                                                            @if($path == 'docx' || $path == 'doc')
+                                                                <span class="preview__name files filesfix" title="{{ $value->name }}"><i class="fas fa-file-word"></i> {{ $value->name }}</span>
+                                                            @else
+                                                                <span class="preview__name files filesfix" title="{{ $value->name }}"><i class="fas fa-file-pdf"></i> {{ $value->name }}</span>
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 <button type="button" class="btn btn-light rep-bot-button"><i class="fa fa-reply"></i>&nbsp;Trả lời</button>
                 <div class="reply display-none" id="rep-area">
                     {!! Form::open(['method'=>'POST', 'route'=>['reply-message', $getMessages->id], 'files' => true]) !!}

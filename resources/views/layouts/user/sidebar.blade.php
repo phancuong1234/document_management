@@ -38,7 +38,18 @@
 
         <a href="{{route('message.index')}}"><li class="big-li"><span>Tin nhắn đến</span></li></a>
         @php
-            $message = App\Models\Message::where('receiver_id', Auth::user()->id)->limit(5)->get();
+            $arrMessages = array();
+            $getMessages = App\Models\Message::where(['parent_id' => config('setting.parent_id_of_message') ])->get();
+            foreach($getMessages as $value ){
+                if($value->receiver_id == auth()->user()->id || $value->sender_id == auth()->user()->id){
+                    array_push($arrMessages, $value->id);
+                }
+            }
+
+            $message = App\Models\Message::join('users', 'users.id', 'messages.sender_id')
+            ->select('users.avatar', 'users.name', 'messages.id', 'messages.content', 'messages.is_seen', 'messages.sender_id', 'messages.receiver_id', 'messages.title', 'messages.created_at')
+            ->whereIn('messages.id',$arrMessages)
+            ->limit(5)->get();
         @endphp
             <li>
                 <ul class="small-ul">

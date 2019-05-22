@@ -55,7 +55,7 @@ Chỉnh sửa văn bản gửi cho đơn vị
                 </div>
                 <div class="clear"></div><br>
                 <div class="form-group row">
-                    {!! Form::submit("Gửi", ["class"=>"btn btn-primary", "style" => "width: 15%;"]) !!}
+                    {!! Form::submit("Sửa", ["class"=>"btn btn-primary", "style" => "width: 15%;"]) !!}
                 </div>
             {!! Form::close() !!}
         </div>

@@ -24,7 +24,7 @@
                                     {!! Form::text('current_department', $currentDepartment['department']['name'], ['class' => 'form-control', 'readonly']) !!}
                                 </div>
 
-                                {!! Form::label('department_id', 'Chọn phòng ban tiếp quản') !!}
+                                {!! Form::label('department_id', 'Chọn phòng ban chuyển đến') !!}
                                 <div class="form-group">
                                     {!! Form::select('department_id', $searchDepartment, $depUsers->department_id,
                                             ['class' => 'selectpicker form-control',

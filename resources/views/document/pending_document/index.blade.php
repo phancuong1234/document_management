@@ -26,7 +26,7 @@ Văn bản đang chờ duyệt
                                 </span>
                                     <span class="badge" style="min-width: 20%">{{ date('H:m:i ( d-m-Y )', strtotime($document->created_at)) }}</span>
                                 </a>
-                                <span class="name userchinh" style="min-width: 18%">Người gửi</span>
+                                <span class="name userchinh" style="margin-left: 1%;min-width: 18%">Người gửi</span>
                                 <span class ="name userchinh1" style="min-width: 21%"><a href="" style="color:#f7f7f7;">{{$document->name}}</a></span>
                             </div>
                             {!! Form::open(['method'=>'PATCH', 'route'=>['document-pending.update',$document->id], 'id' => 'acceptApproval'.$document->id]) !!}

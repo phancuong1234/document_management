@@ -18,12 +18,6 @@
                                         {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => "Nhập Email", 'id' => 'email', 'required' => 'required', 'pattern' => config('setting.patter_email'),  'title' => 'Phía trước dấu @ phải có ít nhất một kí tự và phía sau dấu @ là tối đa 2 đuôi tên miền.', 'disabled' => true]) !!}
                                     </div>
                                 </div>
-                                {!! Form::label('password', "Mật Khẩu") !!}
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => "Nhập Mật Khẩu", 'id' => 'password', 'required' => 'required', 'pattern' => '(?=.*\d)(?=.*[a-z]).{6,}',  'title' => 'Mật khẩu ít nhất có 6 kí tự bao gồm chữ và số']) !!}
-                                    </div>
-                                </div>
                                 {!! Form::label('name', "Tên Thành Viên") !!}
                                 <div class="form-group row">
                                     <div class="col-sm-12">

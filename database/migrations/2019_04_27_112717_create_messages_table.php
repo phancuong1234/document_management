@@ -19,6 +19,8 @@ class CreateMessagesTable extends Migration
             $table->integer('receiver_id');
             $table->string('title');
             $table->string('content');
+            $table->tinyInteger('parent_id')->default(0);
+            $table->json('is_seen')->default(null);;
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });

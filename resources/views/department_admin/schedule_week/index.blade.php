@@ -27,7 +27,7 @@
                                 <td>{{ $schedule->title }}</td>
                                 <td class="frm-align">{{ $dateConvert = date('d-m-Y', strtotime($schedule->start)) }}</td>
                                 <td class="frm-align">{{ $dateConvert = date('d-m-Y', strtotime($schedule->end)) }}</td>
-                                <td class="frm-align"><span class="badge badge-pill badge-success">Khả dụng</span></td>
+                                <td class="frm-align"><span class="badge badge-pill badge-success" style="float: none;background-color: #28a745;">Khả dụng</span></td>
                                 <td class="frm-align">
                                     <a href="{{ route('schedule-admin.show', $schedule->id) }}" class="text-warning frm-margin-right-8">
                                         <i class="fa fa-edit"></i>
