@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="" />
     <link rel="shortcut icon" href="favicon.ico" />
     {{ Html::style(asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')) }}
@@ -22,7 +23,7 @@
 <body class="landing-page">
 <div class="page-wrapper">
     @include('layouts.user.header')
-    <section class="cards-section text-center">
+    <section class="cards-section2 text-center">
         @yield('content')
     </section>
 </div>
@@ -36,6 +37,7 @@
 {{ Html::script(asset('/templates/user/js/bootstrap-datepicker.js')) }}
 {{ Html::script(asset('/js/all.js')) }}
 {{ Html::script(asset('/js/app.js')) }}
+<script src="./js/app.js"></script>
 </body>
 </html>
 

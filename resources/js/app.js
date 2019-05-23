@@ -5,9 +5,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
-
-// window.Vue = require('vue');
+require('./bootstrap');
+window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -31,3 +30,31 @@
 // const app = new Vue({
 //     el: '#app'
 // });
+
+Vue.component('chat-layout', require('./components/ChatLayout.vue').default);
+Vue.filter('formatDate', function(value) {
+    if (value) {
+        return moment(String(value)).format('MM/DD/YYYY hh:mm')
+    }
+});
+Vue.config.debug = true;
+Vue.config.devtools = true;
+window.onload = function () {
+    const app = new Vue({
+        el: '#app',
+        data: {
+            currentUserLogin: {}
+        },
+        created() {
+            this.getCurrentUserLogin()
+        },
+        methods: {
+            getCurrentUserLogin() {
+                axios.get('/getUserLogin')
+                    .then(response => {
+                        this.currentUserLogin = response.data
+                    })
+            }
+        }
+    })
+}

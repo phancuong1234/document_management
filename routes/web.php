@@ -11,10 +11,15 @@
 |
  */
 Route::resource('login', 'LoginController');
+
+Route::get('/test-crawl', function () {
+    return view('crawl');
+});
 Route::post('/search', [
     'as' => 'search-document',
     'uses' => 'SearchDocumentController@search'
 ]);
+
 Route::get('schedule-weekly', [
     'as' => 'schedule-week.nologin',
     'uses' => 'ScheduleWeekController@indexNoLogin',
@@ -130,7 +135,53 @@ Route::group(['middleware' => 'checkIsNotSysAdmin'], function () {
         'uses' => 'HomeController@index',
     ]);
     // tin nhắn cho cả 2 role
+    Route::resource('chat', 'ChatController');
+    //load tin nhắn
+    Route::get('/chats/{id}', [
+        'as' => 'load-message',
+        'uses' => 'ChatController@loadMessage',
+    ]);
+    //lấy thông tin room chat của user đang đăng nhập
+    Route::get('/get-room-of-current-user', [
+        'as' => 'get-room-of-current-user',
+        'uses' => 'ChatController@getRoomOfCurrentUser',
+    ]);
+    //lấy danh sách room
+    Route::get('/list-room', [
+        'as' => 'load-room',
+        'uses' => 'ChatController@listRoom',
+    ]);
+    //lấy user đang login
+    Route::get('/getUserLogin', function() {
+        return Auth::user();
+    });
+    //kiểm tra tin nhắn mới
+    Route::get('/check-is-new-chat/{id}', [
+        'as' => 'check-is-new-chat',
+        'uses' => 'ChatController@checkNewChat',
+    ]);
+    //lấy danh sách liên hệ
+    Route::get('/list-user-in-chat', [
+        'as' => 'list-user-in-chat',
+        'uses' => 'ChatController@listUserInChat',
+    ]);
+    //lấy tên người dùng đang chát vs mình
+    Route::get('/get-current-user-in-chat/{id}', [
+        'as' => 'get-current-user-in-chat',
+        'uses' => 'ChatController@getNameOfCurrentUserChat',
+    ]);
+    Route::get('/search-users-in-chat/{keyWord}', [
+        'as' => 'search-user-chat',
+        'uses' => 'ChatController@searchUser',
+    ]);
+    Route::post('/chats/{id}/{receiverId}', [
+        'as' => 'send-message',
+        'uses' => 'ChatController@sendMessage',
+    ]);
+
+
     Route::resource('message', 'MessageController');
+
     Route::get('/message/create/{id}', [
         'as' => 'reply-message-user',
         'uses' => 'MessageController@createHaveUsers'
