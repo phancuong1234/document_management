@@ -25,7 +25,7 @@ Tin nhắn đến
                     if($message->is_seen == null){
                         $check = false;
                     }else{
-                        $arrSeen = \GuzzleHttp\json_decode($message->is_seen);
+                        $arrSeen = json_decode($message->is_seen);
                         foreach($arrSeen as $value){
                             if($value == auth()->user()->id){
                                 $check = true;
