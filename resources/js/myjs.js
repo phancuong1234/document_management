@@ -298,3 +298,24 @@ $(document).on('click', '#master', function () {
     }
 });
 
+var delay = (function(){
+    var timer = 0;
+    return function(callback, ms){
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+$('#name').keyup(function() {
+    delay(function(){
+        let name = $('#name').val();
+        $.ajax({
+            method: "GET",
+            async: false,
+            url: "/ajax-username/"+name,
+            success: function(data) {
+                $('#usernameF').val(data);
+                $('#username').val(data);
+            }
+        })
+    }, 1000 );
+});

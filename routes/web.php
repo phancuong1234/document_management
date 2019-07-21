@@ -51,7 +51,10 @@ Route::get('404', [
     'as' => 'not-found',
     'uses' => 'ErrorController@notFound',
 ]);
-
+Route::get('ajax-username/{text}', [
+    'as' => 'ajax.username',
+    'uses' => 'AJAXController@ajax_username',
+]);
 Route::resource('schedule', 'ScheduleWeekController');
 
 Route::namespace ('Document')->group(function () {

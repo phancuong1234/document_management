@@ -39,9 +39,9 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $email = $request->email;
+        $username = $request->username;
         $password = $request->password;
-        if(Auth::attempt(['email' => $email, 'password' => $password]))
+        if(Auth::attempt(['username' => $username, 'password' => $password]))
         {
             if(auth()->user()->role == config('setting.roles.system_admin'))
             {

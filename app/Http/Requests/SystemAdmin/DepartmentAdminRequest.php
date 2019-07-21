@@ -25,8 +25,8 @@ class DepartmentAdminRequest extends FormRequest
     {
         return [
             'email' => 'required|max:100|unique:users',
-            'birth_date' => 'required',
-            'avatar' => 'mimes:jpeg,jpg,png,gif|required'
+            'avatar' => 'mimes:jpeg,jpg,png,gif',
+            'username' => 'required|max:100|unique:users',
         ];
     }
 
@@ -36,9 +36,10 @@ class DepartmentAdminRequest extends FormRequest
             'email.required' => 'Vui lòng nhập email',
             'email.max' => 'Chỉ được nhập tối đa 100 ký tự',
             'email.unique' => 'Email này đã tồn tại, vui lòng nhập email khác',
-            'birth_date.required' => 'Vui lòng nhập ngày sinh của admin đơn vị',
             'avatar.mimes' => 'Ảnh không đúng định dạng jpeg, jpg, png, gif',
-            'avatar.required' => 'Vui lòng nhập avatar',
+            'username.required' => 'Vui lòng nhập username',
+            'username.max' => 'Chỉ được nhập tối đa 100 ký tự',
+            'username.unique' => 'Tên đăng nhập này đã tồn tại, vui lòng nhập tên đăng nhập khác',
         ];
     }
 }

@@ -45,13 +45,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-user-tie"></i>
-            <span>Trưởng đơn vị</span>
+            <span>Admin đơn vị</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('create-department-admin.create') }}">Tạo mới trưởng đơn vị</a>
-                <a class="collapse-item" href="{{ route('department-admin.index') }}">Danh sách trưởng đơn vị</a>
-                <a class="collapse-item" href="{{ route('department-admin-archived') }}">Trưởng đơn vị đã xóa</a>
+                <a class="collapse-item" href="{{ route('create-department-admin.create') }}">Tạo mới Admin đơn vị</a>
+                <a class="collapse-item" href="{{ route('department-admin.index') }}">Danh sách Admin đơn vị</a>
+                <a class="collapse-item" href="{{ route('department-admin-archived') }}">Admin đơn vị đã bị xóa</a>
             </div>
         </div>
     </li>

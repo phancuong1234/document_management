@@ -12,6 +12,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'username' => 'systemadmin',
             'email' => 'systemadmin@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'name' => 'Admin Hệ Thống',
@@ -23,6 +24,7 @@ class UserSeeder extends Seeder
             'role' => 1,
         ]);
         DB::table('users')->insert([
+            'username' => 'phonghanhchinh',
             'email' => 'phonghanhchinh@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'name' => 'Tài Khoản Hành Chính',
@@ -35,6 +37,7 @@ class UserSeeder extends Seeder
             'role' => 2,
         ]);
         DB::table('users')->insert([
+            'username' => 'nguyenquang',
             'email' => 'nguyenquang@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'name' => 'Nguyen Quang',
@@ -46,6 +49,7 @@ class UserSeeder extends Seeder
             'role' => 2,
         ]);
         DB::table('users')->insert([
+            'username' => 'testuser',
             'email' => 'testuser@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'name' => 'Test User',
@@ -57,6 +61,7 @@ class UserSeeder extends Seeder
             'role' => 3,
         ]);
         DB::table('users')->insert([
+            'username' => 'uyquyen',
             'email' => 'uyquyen@gmail.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
             'name' => 'Vu Phan',
