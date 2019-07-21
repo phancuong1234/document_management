@@ -15,6 +15,19 @@
                     <div class="card">
                         <div class="card-body">
                             {!! Form::open(['method'=>'POST', 'route'=>'users.store', 'files' => true]) !!}
+                            {!! Form::label('name', "Tên Thành Viên") !!}
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    {!! Form::text('name', '', ['maxlength' => "20", 'class' => 'form-control', 'placeholder' => "Nhập  Tên Thành Viên", 'id' => 'name', 'required' => 'required', 'pattern' => config('setting.patter_fullname'),  'title' => 'Họ tên chỉ bao gồm chữ cái và phải tối thiểu 6 kí tự']) !!}
+                                </div>
+                            </div>
+                            {!! Form::label('name', "Tên Đăng Nhập") !!}
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    {!! Form::text('usernameF', '', ['id' => 'usernameF', 'class' => 'form-control', 'disabled' => true]) !!}
+                                    {!! Form::text('username', '', ['id' => 'username', 'class' => 'form-control', 'hidden' => true]) !!}
+                                </div>
+                            </div>
                             {!! Form::label('email', "Email") !!}
                             <div class="form-group row">
                                 <div class="col-sm-12">
@@ -25,12 +38,6 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => "Nhập Mật Khẩu", 'id' => 'password', 'required' => 'required', 'pattern' => '(?=.*\d)(?=.*[a-z]).{6,}',  'title' => 'Mật khẩu ít nhất có 6 kí tự bao gồm chữ và số']) !!}
-                                </div>
-                            </div>
-                            {!! Form::label('name', "Tên Thành Viên") !!}
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    {!! Form::text('name', '', ['maxlength' => "20", 'class' => 'form-control', 'placeholder' => "Nhập  Tên Thành Viên", 'id' => 'name', 'required' => 'required', 'pattern' => config('setting.patter_fullname'),  'title' => 'Họ tên chỉ bao gồm chữ cái và phải tối thiểu 6 kí tự']) !!}
                                 </div>
                             </div>
                             {!! Form::label('birth_date', "Ngày Sinh") !!}

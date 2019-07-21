@@ -34,11 +34,11 @@
                                     {!! Form::open(['method'=>'POST', 'route'=>'login.store', 'class'=>'user']) !!}
                                         @include('common.errors')
                                         <div class="form-group">
-                                            {!! Form::text('email', '',
+                                            {!! Form::text('username', '',
                                                     ['id'=>'exampleInputEmail',
                                                     'class'=>'form-control form-control-user',
                                                     'aria-describedby'=>'emailHelp',
-                                                    'placeholder'=>'Địa chỉ email...'
+                                                    'placeholder'=>'Tên đăng nhập'
                                                     ]) !!}
                                         </div>
                                         <div class="form-group">

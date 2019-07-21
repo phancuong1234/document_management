@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @section('title')
-    Sửa Trưởng Đơn Vị
+    Sửa Admin Đơn Vị
 @endsection
 @section('content')
     <div class="container-fluid">

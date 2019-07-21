@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @section('title')
-    Quản lý trưởng đơn vị
+    Quản lý Admin đơn vị
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -11,7 +11,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Danh sách trưởng đơn vị</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách Admin đơn vị</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
